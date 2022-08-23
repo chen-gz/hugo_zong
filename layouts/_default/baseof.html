@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body data-spy="scroll" data-target="#toc">
+        <div id="sidebar" class="d-flex flex-column align-items-end"> 
+            {{- partial "sidebar.html" . -}}
+        </div>
+        {{- partial "header.html" . -}}
+        <div id="main-wrapper">
+            <div id="main"> 
+                <div class="row">
+                            {{- block "main" . }}{{- end }}
+
+                    <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"> 
+                        {{- partial "panel.html" . -}}
+                    </div>
+
+                </div>
+                {{- partial "footer.html" . -}}
+        </div>
+        <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button" style="display: inline;"> <i class="fas fa-angle-up"></i> </a>
+
+    </div>
+    </body>
+</html>

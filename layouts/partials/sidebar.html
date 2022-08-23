@@ -1,0 +1,32 @@
+
+<div class="profile-wrapper text-center">
+
+        <div id="avatar">
+            <a href="/" alt="avatar" class="mx-auto"> <img src="https://raw.githubusercontent.com/chen-gz/picBed/master/mine_square.jpg" alt="avatar" onerror="this.style.display='none'">
+            </a>
+        </div>
+        <div class="site-title mt-3">
+            <a href="/">Guangzong</a>
+        </div>
+        <div class="site-subtitle font-italic">Welcome to my blog</div>
+
+</div>
+<ul class="w-100">
+    {{ range $i, $p := .Site.Menus.main }}
+        {{if not (eq $i 0)}}
+            <li class="nav-item active">
+        {{else}}
+            <li class="nav-item">
+        {{end}}
+
+        <a class="nav-link" href="{{.URL}}">
+            <i class="fa-fw ml-xl-3 mr-xl-3 unloaded"></i>
+            <span>
+        {{ .Name }}
+            </span>
+        </a>
+    </li>
+    {{ end }}
+</ul>
+<div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+</div>

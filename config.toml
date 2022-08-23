@@ -1,0 +1,41 @@
+languageCode = 'en-us'
+title = 'Guangzong Blog'
+theme = "zong"
+publishDir = "/home/zong/www"
+enableGitInfo=true
+# uglyurls = true
+
+[markup]
+	defaultMarkdownHandler = "pandoc"
+
+[security.exec]
+  allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^pandoc$']
+  osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Archive"
+    pre = "pen-tool"
+    url = "/Archive/"
+    weight = 2
+  [[menu.main]]
+    name = "Tags"
+    pre = "tag"
+    url = "/tags/"
+    weight = 3
+  [[menu.main]]
+    name = "Categories"
+    pre = "folder"
+    url = "/categories/"
+    weight = 4
+  [[menu.main]]
+    name = "About"
+    pre = "folder"
+    url = "/about/"
+    weight = 4

@@ -1,0 +1,24 @@
+<div class="access">
+    <div id="access-lastmod" class="post">
+        <span>Recent Update</span>
+        <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+            {{ $byLastMod :=  .Site.RegularPages.ByLastmod  }}
+            {{ $recent := ($byLastMod | last 5).Reverse }}
+
+            {{ range  $recent }}
+            <li> <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
+            {{ end }}
+
+        </ul>
+    </div>
+    <div id="access-tags">
+        <span>Trending Tags</span>
+        <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+            {{ range  $tags := .Site.Taxonomies.tags.GetPlural }}
+            <a href="{{ $tags.URL }}" class="badge badge-secondary mr-1 mb-1">{{ $tags.Name }}</a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+

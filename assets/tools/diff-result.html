@@ -1,0 +1,25 @@
+<?php 
+$left = tmpfile();
+$left_path = stream_get_meta_data($left)['uri'];
+fwrite($left, $_POST['left']);
+$right = tmpfile();
+$right_path = stream_get_meta_data($right)['uri'];
+fwrite($right, $_POST['right']);
+$result = tmpfile();
+$result_path = stream_get_meta_data($result)['uri'];
+fclose($result);
+$time_pre = microtime(true);
+$cmd = "vimdiff $left_path $right_path -c 'set nu' -c 'highlight LineNr ctermfg=black' -c TOhtml -c ' w! $result_path' -c 'qa!' ";
+
+exec($cmd);
+$time_post = microtime(true);
+$exec_time = $time_post - $time_pre;
+echo $exec_time;
+
+fclose($left);
+fclose($right);
+echo "<br>";
+echo file_get_contents($result_path);
+
+?>
+
