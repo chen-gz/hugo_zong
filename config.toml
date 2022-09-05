@@ -39,3 +39,7 @@ enableGitInfo=true
     pre = "folder"
     url = "/about/"
     weight = 4
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
