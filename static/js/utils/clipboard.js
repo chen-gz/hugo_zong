@@ -6,11 +6,29 @@
  *   - clipboard.js (https://github.com/zenorocha/clipboard.js)
  */
 
-$(function() {
-  const btnSelector = '.code-header>button';
+$(function () {
+  // const btnSelector = '.code-header>button';
+  const btnSelector = '.sourceCode>pre>button';
   const ICON_SUCCESS = 'fas fa-check';
   const ATTR_TIMEOUT = 'timeout';
+  const ATTR_TITLE_SUCCEED = 'data-title-succeed';
+  const ATTR_TITLE_ORIGIN = 'data-original-title';
   const TIMEOUT = 2000; // in milliseconds
+
+  function insertbtn() {
+    // console.log("hello");
+    var snippets = document.querySelectorAll('.sourceCode>pre');
+    [].forEach.call(snippets, function (snippet) {
+    // console.log("world");
+      // var snippets = document.querySelectorAll('.sourceCode>pre');
+      // console.log(snippet.querySelector('button'))
+      if (snippet.querySelector('button') == null) {
+        snippet.firstChild.insertAdjacentHTML('beforebegin', '<button aria-label="copy" data-title-succeed="Copied!" data-original-title="" title=""><i class="far fa-clipboard"></i></button>');
+      }
+    });
+
+  }
+
 
   function isLocked(node) {
     if ($(node)[0].hasAttribute(ATTR_TIMEOUT)) {
@@ -33,10 +51,13 @@ $(function() {
   /* --- Copy code block --- */
 
   // Initial the clipboard.js object
+  insertbtn();
   const clipboard = new ClipboardJS(btnSelector, {
     target(trigger) {
-      let codeBlock = trigger.parentNode.nextElementSibling;
-      return codeBlock.querySelector('code .rouge-code');
+      // let codeBlock = trigger.parentNode.nextElementSibling;
+      let codeBlock = trigger.parentNode;
+      // return codeBlock.querySelector('code .rouge-code');
+      return codeBlock.querySelector('code');
     }
   });
 
@@ -53,12 +74,12 @@ $(function() {
   const ICON_DEFAULT = getIcon(btnSelector);
 
   function showTooltip(btn) {
-    const succeedTitle = $(btn).attr('title-succeed');
-    $(btn).attr('data-original-title', succeedTitle).tooltip('show');
+    const succeedTitle = $(btn).attr(ATTR_TITLE_SUCCEED);
+    $(btn).attr(ATTR_TITLE_ORIGIN, succeedTitle).tooltip('show');
   }
 
   function hideTooltip(btn) {
-    $(btn).tooltip('hide').removeAttr('data-original-title');
+    $(btn).tooltip('hide').removeAttr(ATTR_TITLE_ORIGIN);
   }
 
   function setSuccessIcon(btn) {
@@ -115,17 +136,20 @@ $(function() {
 
     // Switch tooltip title
 
-    const defaultTitle = target.attr('data-original-title');
-    const succeedTitle = target.attr('title-succeed');
+    const defaultTitle = target.attr(ATTR_TITLE_ORIGIN);
+    const succeedTitle = target.attr(ATTR_TITLE_SUCCEED);
 
-    target.attr('data-original-title', succeedTitle).tooltip('show');
+    target.attr(ATTR_TITLE_ORIGIN, succeedTitle).tooltip('show');
     lock(target);
 
     setTimeout(() => {
-      target.attr('data-original-title', defaultTitle);
+      target.attr(ATTR_TITLE_ORIGIN, defaultTitle);
       unlock(target);
     }, TIMEOUT);
 
   });
 
+
+
 });
+

@@ -165,14 +165,17 @@ div {
   }
 }
 
-.code-header {
+// .code-header {
+.sourceCode {
   background: var(--code-header-bg);
   border-top-left-radius: $code-radius;
   border-top-right-radius: $code-radius;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  line-height: 1.85rem;
+  border-bottom-left-radius: $code-radius;
+  border-bottom-right-radius: $code-radius;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // line-height: 1.5rem;
 
   // icons
   i {
@@ -209,6 +212,8 @@ div {
 
   // clipboard
   button {
+    position:absolute;
+    right: 50px;
     border: 1px solid var(--code-header-bg);
     border-radius: $code-radius;
     padding: 0;
