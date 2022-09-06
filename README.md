@@ -6,8 +6,10 @@ I like Hugo and chirpy, but chirpy is designed for Jekyll. That's why I wrote th
 
 There is some function that is missing in my theme. 
 
-- [ ] search
 - [ ] better folder arrancement
 - [ ] dark theme
+- [x] search
+- [x] copy code block
+
 
 If your like this theme and got some time to improve it. PRs are welcome. 
