@@ -23,3 +23,21 @@
   "layout/categories",
   "layout/category-tag",
   "highlight";
+@media print {
+  header nav, footer {
+    display: none;
+  }
+  #back-to-top {
+    display: none;
+
+  }
+  #topbar-wrapper {
+	  display: none;
+  }
+  body {
+    // font: 20pt Georgia, "Times New Roman", Times, serif;
+    font-size: 23pt;
+    line-height: 2;
+  }
+
+}
