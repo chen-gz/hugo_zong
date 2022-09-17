@@ -14,7 +14,7 @@ $(function() {
   $("#back-to-top").click(() => {
     $("body,html").animate({
       scrollTop: 0
-    }, 800);
+    }, 0);
     return false;
   });
 });
