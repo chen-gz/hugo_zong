@@ -4,6 +4,9 @@
 <div id="page" class="post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4">
 <div id="post-list">
     {{range $i, $p := .Site.RegularPages}}
+    {{if gt $i 10}}
+    {{break}}
+    {{end}}
     <div class="post-preview">
     <h1>
         <a href="{{.Permalink}}">{{.Title}} </a>
