@@ -1,4 +1,4 @@
-<div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down">
+<div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
     <div class="access">
 
         <div id="toc-wrapper" class="">
@@ -19,15 +19,6 @@
                 <li> <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
                 {{ end }}
             </ul>
-        </div>
-
-        <div id="access-tags">
-            <span>Trending Tags</span>
-            <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-                {{ range $tags := .Site.Taxonomies.tags.GetPlural }}
-                <a href="{{ $tags.URL }}" class="badge badge-secondary mr-1 mb-1">{{ $tags.Name }}</a>
-                {{ end }}
-            </div>
         </div>
 
         <div id="access-tags">
