@@ -1,36 +1,36 @@
 {{ define "main" }}
 
-<div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
-<div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
-    <div id="page" class="post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4">
+<!-- <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"> -->
+<!-- <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"> -->
+<!-- <div id="page" class="post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4"> -->
+<div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4 pb-5">
+    <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
         <h1 class="dynamic-title">Posts</h1>
         <div class="post-content">
-            <div id="archives" class="pl-xl-2">
-            {{$previous_year := ""}}
-            {{range $i, $p := .Site.RegularPages}}
-            {{$this_year := (.PublishDate.Format "2006")}}
-            {{$this_month := (.PublishDate.Format "01")}}
-            {{$this_day := (.PublishDate.Format "02")}}
-            {{if not (eq $this_year $previous_year)}}
+            <div id="archives" class="pl-xl-3">
+                {{$previous_year := ""}}
+                {{range $i, $p := .Site.RegularPages}}
+                {{$this_year := (.PublishDate.Format "2006")}}
+                {{$this_month := (.PublishDate.Format "Jan")}}
+                {{$this_day := (.PublishDate.Format "02")}}
+                {{if not (eq $this_year $previous_year)}}
                 {{if not (eq $i 0)}}
                 </ul>
                 {{end}}
-            <span class="lead"> {{$this_year}}</span>
-            <ul class="list-unstyled">
-            {{end}}
-                <li>
-                    <div>
-                        <span class="=date day"> {{$this_day}} </span>
-                        <span class="date month small text-muted"> {{$this_month}} </span>
+                <!-- <span class="lead"> {{$this_year}}</span> -->
+                <div class="year lead">{{$this_year}}</div>
+                <ul class="list-unstyled">
+                    {{end}}
+                    <li>
+                        <span class="=date day">{{$this_day}}</span>
+                        <span class="date month small text-muted ml-1">{{$this_month}}</span>
                         <a href="{{ .Permalink }}">{{.Title}} </a>
-                    </div>
-                </li>
-            {{$previous_year = $this_year}}
-            {{end}}
-            </ul>
+                    </li>
+                    {{$previous_year = $this_year}}
+                    {{end}}
+                </ul>
             </div>
         </div>
     </div>
-</div>
 </div>
 {{ end }}

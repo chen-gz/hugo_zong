@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body data-spy="scroll" data-target="#toc">
-        <div id="sidebar" class="d-flex flex-column align-items-end"> 
-            {{- partial "sidebar.html" . -}}
-        </div>
-        {{- partial "header.html" . -}}
-        <div id="main-wrapper">
-            <div id="main"> 
-                <div class="row">
-                            {{- block "main" . }}{{- end }}
+{{- partial "head.html" . -}}
 
-                    <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"> 
-                        {{- partial "panel.html" . -}}
-                    </div>
+<body data-spy="scroll" data-target="#toc">
+    {{- partial "sidebar.html" . -}}
+    {{- partial "header.html" . -}}
+    <div id="main-wrapper" class="d-flex justify-content-center">
+        <div id="main" class="container pl-xl-4 pr-xl-4">
+            <div class="row">
+                {{- block "main" . }}{{- end }}
 
-                </div>
-                {{- partial "footer.html" . -}}
+                {{- partial "panel.html" . -}}
+
             </div>
-            {{- partial "search.html" . -}}
-        <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button" style="display: inline;"> <i class="fas fa-angle-up"></i> </a>
-
+            {{- partial "footer.html" . -}}
+        </div>
+        {{- partial "search.html" . -}}
     </div>
-    </body>
+    <div id="mask"></div>
+    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"
+        style="display: none;"> <i class="fas fa-angle-up"></i> </a>
+    <!-- notification and some scripts -->
+</body>
+
 </html>
