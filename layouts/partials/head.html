@@ -10,8 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $sass := resources.Get "sass/main.scss" }}
-    {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{ $style := $sass | resources.ToCSS | Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" >
     <title>
         {{ $title := print .Site.Title " | " .Title }}
         {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
