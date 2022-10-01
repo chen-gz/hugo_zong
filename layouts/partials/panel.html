@@ -2,48 +2,39 @@
     <div class="access">
 
         <div id="toc-wrapper" class="">
-            <!-- <div id="access-lastmod" class="post"> -->
-            <!-- <div class="panel-heading pl-3 pt-2 mb-2"> -->
             <span>Contents</span>
-            <!-- </div> -->
             <nav id="toc" data-toggle="toc">
-
-                <!-- <ul class="post-content pl-0 pb-1 ml-1 mt-2"> -->
-                <!-- <ul class="nav navbar-nav"> -->
                 <ul class="pl-0 pb-1 ml-1 mt-2">
                     {{.TableOfContents}}
-                    <!-- <ul class="nav navbar-nav">
-                <li><a class="nav-link" href="#prerequisites">Prerequisites</a></li>
-                <li><a class="nav-link" href="#installation">Installation</a>
-                    <ul class="nav navbar-nav">
-                        <li><a class="nav-link" href="#creating-a-new-site">Creating a New Site</a></li>
-                        <li><a class="nav-link" href="#installing-dependencies">Installing Dependencies</a></li>
-                    </ul>
-                </li> -->
                 </ul>
             </nav>
         </div>
 
-
-
         <div id="access-lastmod" class="post">
-            <span>Recent Update</span>
+            <div class="panel-heading">Recently Updated</div>
             <ul class="post-content pl-0 pb-1 ml-1 mt-2">
-
                 {{ $byLastMod := .Site.RegularPages.ByLastmod }}
                 {{ $recent := ($byLastMod | last 5).Reverse }}
-
                 {{ range $recent }}
                 <li> <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
                 {{ end }}
-
             </ul>
         </div>
+
         <div id="access-tags">
             <span>Trending Tags</span>
             <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
                 {{ range $tags := .Site.Taxonomies.tags.GetPlural }}
                 <a href="{{ $tags.URL }}" class="badge badge-secondary mr-1 mb-1">{{ $tags.Name }}</a>
+                {{ end }}
+            </div>
+        </div>
+
+        <div id="access-tags">
+            <div class="panel-heading">Trending Tags</div>
+            <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+                {{ range .Site.Taxonomies.tags }}
+                <a class="post-tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
                 {{ end }}
             </div>
         </div>
