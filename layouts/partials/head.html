@@ -1,17 +1,20 @@
 <head>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" class="dark-mode-native-dark-original">
- {{if or (eq .Layout "home") (eq .Layout "post")}}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- bootstrap-toc -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
+        class="dark-mode-native-dark-original">
+    {{if or (eq .Layout "home") (eq .Layout "post")}}
 
- {{end}}
+    {{end}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $sass := resources.Get "sass/main.scss" }}
     {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" >
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
     <title>
         {{ $title := print .Site.Title " | " .Title }}
         {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
@@ -19,27 +22,31 @@
     </title>
 
 
- <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
- <script src = "//cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
- <script type="text/javascript" src="/js/commons/back-to-top.js"></script>
- <script type="text/javascript" src="/js/commons/search-display.js"></script>
- <script type="text/javascript" src="/js/commons/topbar-title.js"></script>
- <!-- <script type="text/javascript" src="/js/commons/tooltip-loader.js"></script> -->
- <script type="text/javascript" src="/js/commons/topbar-switch.js"></script>
- <script type="text/javascript" src="/js/commons/sidebar.js"></script>
- <script type="text/javascript" src="/js/utils/category-collapse.js"></script>
- <script type="text/javascript" src="/js/utils/checkbox.js"></script>
- <script type="text/javascript" src="/js/utils/clipboard.js"></script>
- <script type="text/javascript" src="/js/utils/img-extra.js"></script>
- <script type="text/javascript" src="/js/utils/pageviews.js"></script>
- <!-- <script type="text/javascript" src="/js/utils/smooth-scroll.js"></script> -->
- <script type="text/javascript" src="/js/utils/timeago.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/commons/back-to-top.js"></script>
+    <script type="text/javascript" src="/js/commons/search-display.js"></script>
+    <script type="text/javascript" src="/js/commons/topbar-title.js"></script>
+    <!-- <script type="text/javascript" src="/js/commons/tooltip-loader.js"></script> -->
+    <script type="text/javascript" src="/js/commons/topbar-switch.js"></script>
+    <script type="text/javascript" src="/js/commons/sidebar.js"></script>
+    <script type="text/javascript" src="/js/utils/category-collapse.js"></script>
+    <script type="text/javascript" src="/js/utils/checkbox.js"></script>
+    <script type="text/javascript" src="/js/utils/clipboard.js"></script>
+    <script type="text/javascript" src="/js/utils/img-extra.js"></script>
+    <script type="text/javascript" src="/js/utils/pageviews.js"></script>
+    <!-- <script type="text/javascript" src="/js/utils/smooth-scroll.js"></script> -->
+    <script type="text/javascript" src="/js/utils/timeago.js"></script>
+    <script type="text/javascript" src="/js/utils/mode-toggle.js"></script>
+    <script type="text/javascript" src="/js/utils/locale-datetime.js"></script>
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"> -->
 
-    
+
 </head>
