@@ -1,0 +1,80 @@
+
+/* --- Panels --- */
+
+.access {
+  top: 2rem;
+  transition: top 0.2s ease-in-out;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+
+  &:only-child {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+  }
+
+  > div {
+    padding-left: 1rem;
+    border-left: 1px solid var(--main-border-color);
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .post-content {
+    font-size: 0.9rem;
+  }
+
+}
+
+#panel-wrapper {
+  /* the headings */
+  .panel-heading {
+    @include label(inherit);
+  }
+
+  .post-tag {
+    display: inline-block;
+    line-height: 1rem;
+    font-size: 0.85rem;
+    background: none;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    margin: 0 0.35rem 0.5rem 0;
+
+    &:hover {
+      background-color: #2a408e;
+      border-color: #2a408e;
+      color: #fff;
+      transition: none;
+    }
+  }
+
+  [data-topbar-visible=true] & > div {
+    top: 6rem;
+  }
+}
+
+#access-lastmod {
+  li {
+    height: 1.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    list-style: none;
+  }
+
+  a {
+    &:hover {
+      @extend %link-hover;
+    }
+
+    @extend %no-bottom-border;
+
+    color: inherit;
+  }
+
+}

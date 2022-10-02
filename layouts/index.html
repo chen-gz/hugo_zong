@@ -1,31 +1,29 @@
 {{define "main"}}
 
-<div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4 pb-5">
-    <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-        <div id="post-list">
-            {{range $i, $p := .Site.RegularPages}}
-            {{if gt $i 10}}
-            {{break}}
-            {{end}}
-            <div class="post-preview">
-                <h1>
-                    <a href="{{.Permalink}}">{{.Title}} </a>
-                </h1>
-                <div class="post-content">
-                    <p>
-                        {{.Summary}}
-                    </p>
-                </div>
-                <div class="post-meta text-muted d-flex justify-content-between">
-                    <div>
-                        <i class="far fa-calendar fa-fw"></i>
-                        {{.Page.Date.Format "Jan 02"}}
-                    </div>
-
-                </div>
-            </div>
-            {{end}}
+<!-- <div class="post pl-1 pr-1 pl-md-2 pr-md-2"> -->
+<!-- <div id="post-list"> -->
+{{range $i, $p := .Site.RegularPages}}
+{{if gt $i 10}}
+{{break}}
+{{end}}
+<div class="post-preview">
+    <h1>
+        <a href="{{.Permalink}}">{{.Title}} </a>
+    </h1>
+    <div class="post-content">
+        <p>
+            {{.Summary}}
+        </p>
+    </div>
+    <div class="post-meta text-muted d-flex justify-content-between">
+        <div>
+            <i class="far fa-calendar fa-fw"></i>
+            {{.Page.Date.Format "Jan 02"}}
         </div>
+
     </div>
 </div>
+{{end}}
+<!-- </div> -->
+<!-- </div> -->
 {{end}}

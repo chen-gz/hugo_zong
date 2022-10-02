@@ -1,0 +1,83 @@
+
+/* Pad horizontal */
+@media all and (min-width: 992px) and (max-width: 1199px) {
+  #main .col-lg-11 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 96%;
+    flex: 0 0 96%;
+    max-width: 96%;
+  }
+}
+
+/* Compact icons in sidebar & panel hidden */
+@media all and (min-width: 850px) and (max-width: 1199px) {
+  #sidebar {
+    width: $sidebar-width-small;
+
+    .site-subtitle {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .sidebar-bottom {
+      a,
+      span {
+        width: 2rem;
+      }
+
+      .icon-border {
+        left: -3px;
+      }
+    }
+  }
+
+  #topbar-wrapper {
+    left: $sidebar-width-small;
+  }
+
+  #search-results > div {
+    max-width: 700px;
+  }
+
+  .site-title {
+    font-size: 1.3rem;
+    margin-left: 0 !important;
+  }
+
+  .site-subtitle {
+    @include ml-mr(1rem);
+
+    font-size: 90%;
+  }
+
+  #main{
+      min-height: calc(100vh - #{$topbar-height} - #{$footer-height}) !important;
+  }
+
+  #main-wrapper, footer {
+    margin-left: $sidebar-width-small;
+  }
+
+  #breadcrumb {
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+
+}
+
+/* panel hidden */
+@media all and (max-width: 1199px) {
+  #panel-wrapper {
+    display: none;
+  }
+
+  #main > div.row {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+}
+

@@ -2,25 +2,29 @@
 <html>
 {{- partial "head.html" . -}}
 
-<body data-spy="scroll" data-target="#toc" data-topbar-visible="true">
+<body data-spy="scroll" data-target="#toc" data-topbar-visible="true" class="d-flex">
     {{- partial "sidebar.html" . -}}
-    {{- partial "header.html" . -}}
-    <div id="main-wrapper" class="d-flex justify-content-center">
-        <div id="main" class="container pl-xl-4 pr-xl-4">
-            <div class="row">
-
-                {{- block "main" . }}{{- end }}
-
-                {{- partial "panel.html" . -}}
-
+    <div class="d-flex flex-column">
+        {{- partial "header.html" . -}}
+        <div id="main-wrapper" class="d-flex">
+            <div id="core-wrapper" class="d-flex flex-column ">
+                <div id="main" class="d-flex flex-column">
+                    {{ block "main" . }}{{ end -}}
+                </div>
             </div>
-            {{- partial "footer.html" . -}}
+            <div id="pannel-wrapper" class="d-flex flex-column">
+                {{- partial "panel.html" . -}}
+            </div>
         </div>
-        {{- partial "search.html" . -}}
+        <div>
+            <footer class="footer">{{- partial "footer.html" . -}}</footer>
+        </div>
+        <div id="mask"></div>
+        <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"
+            style="display: none">
+            <i class="fas fa-angle-up"></i>
+        </a>
     </div>
-    <div id="mask"></div>
-    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"
-        style="display: none;"> <i class="fas fa-angle-up"></i> </a>
     <!-- notification and some scripts -->
 </body>
 

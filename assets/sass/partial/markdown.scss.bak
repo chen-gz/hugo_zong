@@ -1,0 +1,277 @@
+
+/* --- Begin of Markdown table style --- */
+
+/* it will be created by Liquid */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+
+  > table {
+    min-width: 100%;
+    overflow-x: auto;
+    border-spacing: 0;
+
+    thead {
+      border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+
+      th {
+        @extend %table-cell;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--tb-border-color);
+
+        &:nth-child(2n) {
+          background-color: var(--tb-even-bg);
+        }
+
+        &:nth-child(2n + 1) {
+          background-color: var(--tb-odd-bg);
+        }
+
+        td {
+          @extend %table-cell;
+        }
+      }
+    } /* tbody */
+  }/* table */
+}
+
+/* --- post --- */
+
+.post {
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    &.img-link {
+      @extend %no-cursor;
+    }
+
+    /* created by `_includes/img-extra.html` */
+    &.popup {
+      cursor: zoom-in;
+
+      > img[data-src]:not(.normal):not(.left):not(.right) {
+        @include align-center;
+      }
+    }
+
+    &:hover {
+      code {
+        @extend %link-hover;
+      }
+    }
+  } /* a */
+
+}
+
+.pageviews .fa-spinner {
+  font-size: 80%;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  word-spacing: 1px;
+
+  a {
+    &:not(:last-child) {
+      margin-right: 2px;
+    }
+
+    &:not([class]):hover {
+      @extend %link-hover;
+    }
+  }
+
+  em {
+    @extend %normal-font-style;
+  }
+}
+
+.post-content {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-top: 2rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  a {
+    &:not(.img-link) {
+      @extend %link-underline;
+
+      &:hover {
+        @extend %link-hover;
+      }
+    }
+
+    &.img-link {
+      @extend %img-caption;
+    }
+
+  }
+
+  ul {
+    /* attribute 'hide-bullet' was added by liquid */
+    .task-list-item[hide-bullet] {
+      list-style-type: none;
+
+      > i { /* checkbox icon */
+        margin: 0 0.4rem 0.2rem -1.4rem;
+        vertical-align: middle;
+        color: var(--checkbox-color);
+
+        &.checked {
+          color: var(--checkbox-checked-color);
+        }
+      }
+
+    }
+
+    input[type=checkbox] {
+      margin: 0 0.5rem 0.2rem -1.3rem;
+      vertical-align: middle;
+    }
+
+  } /* ul */
+
+  > ol,
+  > ul {
+    padding-left: 2rem;
+
+    li {
+      ol,
+      ul { /* sub list */
+        padding-left: 2rem;
+        margin-top: 0.3rem;
+      }
+    }
+
+  }
+
+  > ol {
+    li {
+      padding-left: 0.25em;
+    }
+  }
+
+  dl > dd {
+    margin-left: 1rem;
+  }
+
+} /* .post-content */
+
+.tag:hover {
+  @extend %tag-hover;
+}
+
+.post-tag {
+  display: inline-block;
+  min-width: 2rem;
+  text-align: center;
+  background: var(--tag-bg);
+  border-radius: 0.3rem;
+  padding: 0 0.4rem;
+  color: inherit;
+  line-height: 1.3rem;
+
+  &:not(:last-child) {
+    margin-right: 0.2rem;
+  }
+
+  &:hover {
+    @extend %tag-hover;
+
+    border-bottom: none;
+    text-decoration: none;
+    color: #d2603a;
+  }
+}
+
+/* --- buttons --- */
+.btn-lang {
+  border: 1px solid !important;
+  padding: 1px 3px;
+  border-radius: 3px;
+  color: var(--link-color);
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+/* --- Effects classes --- */
+
+.loaded {
+  display: block !important;
+
+  @at-root .d-flex#{&} {
+    display: flex !important;
+  }
+}
+
+.unloaded {
+  display: none !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.flex-grow-1 {
+  -ms-flex-positive: 1 !important;
+  flex-grow: 1 !important;
+}
+
+.btn-box-shadow {
+  box-shadow: 0 0 8px 0 var(--btn-box-shadow) !important;
+}
+
+.no-text-decoration {
+  @include no-text-decoration;
+}
+
+.tooltip-inner { /* Overrided BS4 Tooltip */
+  font-size: 0.7rem;
+  max-width: 220px;
+  text-align: left;
+}
+
+.disabled {
+  color: rgb(206, 196, 196);
+  pointer-events: auto;
+  cursor: not-allowed;
+}
+
+.hide-border-bottom {
+  border-bottom: none !important;
+}
+
+.input-focus {
+  box-shadow: none;
+  border-color: var(--input-focus-border-color) !important;
+  background: center !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* --- Overriding --- */
+
+/* magnific-popup */
+figure .mfp-title {
+  text-align: center;
+  padding-right: 0;
+  margin-top: 0.5rem;
+}
+
+/* mermaid */
+.mermaid {
+  text-align: center;
+}

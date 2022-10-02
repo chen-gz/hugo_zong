@@ -1,13 +1,11 @@
 {{ define "main" }}
-<div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4 pb-5">
-    <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-        <div class="post-meta text-muted"> </div>
-        <div id="post-content">
-            <h1>{{ .Title }}</h1>
-            <!-- {{.TableOfContents}} -->
-            {{ .Content }}
-        </div>
-        <div class="post-tail-wrapper text-muted"></div>
+<div class="post pl-1 pr-1 pl-md-2 pr-md-2">
+    <div class="post-meta text-muted"></div>
+    <div id="post-content">
+        <h1>{{ .Title }}</h1>
+        <!-- {{.TableOfContents}} -->
+        {{ .Content }}
     </div>
+    <div class="post-tail-wrapper text-muted"></div>
 </div>
 {{ end }}
