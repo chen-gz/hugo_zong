@@ -8,3 +8,6 @@ body {
   // font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
   font-family: "Times New Roman", "Microsoft Yahei", sans-serif;
 }
+a {
+  @extend %link-color;
+}

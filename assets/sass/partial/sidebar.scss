@@ -9,6 +9,10 @@
   width: $sidebar-width !important;
   top: 0; // for position: sticky
 
+  a {
+    color: var(--sidebar-link-color);
+  }
+
   #avatar {
     > a {
       display: block;
@@ -22,9 +26,9 @@
       -moz-transition: border-color 0.35s ease-in-out;
       transition: border-color 0.35s ease-in-out;
 
-      &:hover {
-        border-color: white;
-      }
+      // &:hover {
+      //   border-color: white;
+      // }
     }
 
     img {
@@ -45,7 +49,7 @@
 
   .site-title {
     a {
-      @extend %clickable-transition;
+      // @extend %clickable-transition;
 
       font-weight: 900;
       font-size: 1.5rem;
@@ -78,15 +82,15 @@
     display: table;
     height: $tab-height;
 
-    &.active {
-      .nav-link {
-        color: var(--sidebar-active-color);
-      }
-    }
+    // &.active {
+    //   .nav-link {
+    //     color: var(--sidebar-active-color);
+    //   }
+    // }
 
-    &:not(.active) > a {
-      @extend %clickable-transition;
-    }
+    // &:not(.active) > a {
+    //   @extend %clickable-transition;
+    // }
   }
 
   ul {
@@ -123,29 +127,29 @@
       }
     } /* li */
 
-    @mixin fix-cursor($top) {
-      top: $top;
-      visibility: visible;
-    }
+    // @mixin fix-cursor($top) {
+    //   top: $top;
+    //   visibility: visible;
+    // }
 
-    @for $i from 1 through $tab-count {
-      $offset: $tab-count - $i;
-      $top: -$offset * $tab-height + ($tab-height - $tab-cursor-height) / 2;
-
-      @if $i < $tab-count {
-        > li.active:nth-child(#{$i}),
-        > li.nav-item:nth-child(#{$i}):hover {
-          ~ li:last-child::after {
-            @include fix-cursor($top);
-          }
-        }
-      } @else {
-        > li.active:nth-child(#{$i}):last-child::after,
-        > li.nav-item:nth-child(#{$i}):last-child:hover::after {
-          @include fix-cursor($top);
-        }
-      }
-    } /* @for */
+    // @for $i from 1 through $tab-count {
+    //   $offset: $tab-count - $i;
+    //   $top: -$offset * $tab-height + ($tab-height - $tab-cursor-height) / 2;
+    //
+    //   @if $i < $tab-count {
+    //     > li.active:nth-child(#{$i}),
+    //     > li.nav-item:nth-child(#{$i}):hover {
+    //       ~ li:last-child::after {
+    //         @include fix-cursor($top);
+    //       }
+    //     }
+    //   } @else {
+    //     > li.active:nth-child(#{$i}):last-child::after,
+    //     > li.nav-item:nth-child(#{$i}):last-child:hover::after {
+    //       @include fix-cursor($top);
+    //     }
+    //   }
+    // } /* @for */
   } /* ul */
 
   .sidebar-bottom {
