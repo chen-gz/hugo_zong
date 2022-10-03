@@ -1,25 +1,22 @@
 <div id="topbar-wrapper">
     <div id="topbar" class="d-flex">
-
         <!-- class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> -->
         <span id="breadcrumb">
-            {{$paths := split .RelPermalink "/"}}
-            {{$tmp := ""}}
-            {{range $i, $p := $paths}}
-            {{if eq $i 0}}
-            <span> <a href="{{ "/" | absURL }}">Home</a></span>
-            {{else}}
-            {{$tmp = printf "%s/%s" $tmp $p}}
-            <span> <a href="{{ $tmp | absURL }}">{{ $p }}</a></span>
-
-            {{end}}
-            {{end}}
+            {{$paths := split .RelPermalink "/"}} {{$tmp := ""}} {{range $i, $p :=
+            $paths}} {{if eq $i 0}}
+            <span><a href='{{ "/" | absURL }}'>Home </a></span>
+            {{else}} {{$tmp = printf "%s/%s" $tmp $p}} {{if $p}}
+            <span><a href="{{ $tmp | absURL }}">{{ $p }} </a></span>
+            {{end}} {{end}} {{end}}
         </span>
         <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
-        <div id="topbar-title"> Guangzong</div>
+        <div id="topbar-title">Guangzong</div>
         <i id="search-trigger" class="fas fa-search fa-fw"></i>
-        <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input
-                class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off"
-                placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span>
+        <span id="search-wrapper" class="align-items-center">
+            <i class="fas fa-search fa-fw"></i>
+            <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off"
+                placeholder="Search..." />
+            <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
+        </span>
     </div>
 </div>

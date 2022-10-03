@@ -1,7 +1,12 @@
 #core-wrapper {
   position: relative;
   // width: calc(100% - #{$sidebar-width});
-  width: calc(100% - #{$sidebar-width});
+  // width: calc(100% - #{$sidebar-width});
+  // margin-left: 1rem;
+  // margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 0rem;
+  width: 100%;
 }
 
 #main {
@@ -11,12 +16,12 @@
 #main-wrapper {
 }
 #all-wrapper {
-  width: calc(98vw - #{$sidebar-width});
+  width: calc(100vw - #{$sidebar-width} - 1px);
 }
 
 .post-preview {
-    // border-bottom-color: var(--main-border-color);
-    border-bottom: solid 1px var(--main-border-color);
-    margin-bottom: 1rem;
-    padding-bottom:1rem;
+  // border-bottom-color: var(--main-border-color);
+  border-bottom: solid 1px var(--main-border-color);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
