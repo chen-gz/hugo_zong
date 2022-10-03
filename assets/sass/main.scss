@@ -13,30 +13,31 @@
 // "addon/module",
 // "variables-hook",
 // "addon/syntax",
-// "addon/commons";
 
+@import "partial/general";
 @import "addon/module";
 @import "addon/variables";
-// @import 'layout/home';
 @import "partial/sidebar";
 @import "partial/topbar";
 
-@import "partial/core";
+// @import "addon/commons";
+
+// @import "partial/core";
 @import "partial/panel";
 @import "partial/search";
 @import "partial/main";
 @import "partial/markdown";
-// @import 'responsive/small_850';
-// @import 'responsive/middle_1120';
+@import "responsive/small_850";
+@import "responsive/middle_1120";
 // @import 'responsive/large';
 
 // TODO: need to fix
-// @import "layout/home";
-// @import "layout/post";
-// @import "layout/tags";
-// @import "layout/archives";
-// @import "layout/categories";
-// @import "layout/category-tag";
+@import "layout/post";
+@import "layout/home";
+@import "layout/tags";
+@import "layout/archives";
+@import "layout/categories";
+@import "layout/category-tag";
 // //
 // @import "addon/commons";
 

@@ -7,7 +7,7 @@
             {{$tmp := ""}}
             {{range $i, $p := $paths}}
             {{if eq $i 0}}
-            <span> <a href="{{ " /" | absURL }}">Home</a></span>
+            <span> <a href="{{ "/" | absURL }}">Home</a></span>
             {{else}}
             {{$tmp = printf "%s/%s" $tmp $p}}
             <span> <a href="{{ $tmp | absURL }}">{{ $p }}</a></span>

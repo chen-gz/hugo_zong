@@ -1,33 +1,27 @@
-<div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
-    <div class="access">
+<div id="toc-wrapper" class="mb-5 pl-2">
+    <span>Contents</span>
+    <nav id="toc" data-toggle="toc">
+        <!-- <ul class="pl-0 pb-1 ml-1 mt-2"> -->
+        <!--     {{.TableOfContents}} -->
+        <!-- </ul> -->
+    </nav>
+</div>
 
-        <div id="toc-wrapper" class="">
-            <span>Contents</span>
-            <nav id="toc" data-toggle="toc">
-                <ul class="pl-0 pb-1 ml-1 mt-2">
-                    {{.TableOfContents}}
-                </ul>
-            </nav>
-        </div>
+<div id="access-lastmod" class="post pb-4">
+    <div class="panel-heading">Recently Updated</div>
+    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+        {{ $byLastMod := .Site.RegularPages.ByLastmod }} {{ $recent := ($byLastMod |
+        last 5).Reverse }} {{ range $recent }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+</div>
 
-        <div id="access-lastmod" class="post">
-            <div class="panel-heading">Recently Updated</div>
-            <ul class="post-content pl-0 pb-1 ml-1 mt-2">
-                {{ $byLastMod := .Site.RegularPages.ByLastmod }}
-                {{ $recent := ($byLastMod | last 5).Reverse }}
-                {{ range $recent }}
-                <li> <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
-                {{ end }}
-            </ul>
-        </div>
-
-        <div id="access-tags">
-            <div class="panel-heading">Trending Tags</div>
-            <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-                {{ range .Site.Taxonomies.tags }}
-                <a class="post-tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-                {{ end }}
-            </div>
-        </div>
+<div id="access-tags">
+    <div class="panel-heading">Trending Tags</div>
+    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+        {{ range .Site.Taxonomies.tags }}
+        <a class="post-tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        {{ end }}
     </div>
 </div>

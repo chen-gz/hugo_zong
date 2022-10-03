@@ -4,20 +4,21 @@
 
 <body data-spy="scroll" data-target="#toc" data-topbar-visible="true" class="d-flex">
     {{- partial "sidebar.html" . -}}
-    <div class="d-flex flex-column">
-        {{- partial "header.html" . -}}
-        <div id="main-wrapper" class="d-flex">
-            <div id="core-wrapper" class="d-flex flex-column ">
+    <div id="all-wrapper" class="d-flex flex-column">
+        {{- partial "topbar.html" . -}}
+        <div id="main-wrapper" class="d-flex mt-3">
+            <div id="core-wrapper" class="d-flex flex-column mr-5 ml-5">
                 <div id="main" class="d-flex flex-column">
                     {{ block "main" . }}{{ end -}}
                 </div>
+
+                <div>
+                    <footer class="footer">{{- partial "footer.html" . -}}</footer>
+                </div>
             </div>
-            <div id="pannel-wrapper" class="d-flex flex-column">
+            <div id="panel-wrapper" class="d-flex flex-column">
                 {{- partial "panel.html" . -}}
             </div>
-        </div>
-        <div>
-            <footer class="footer">{{- partial "footer.html" . -}}</footer>
         </div>
         <div id="mask"></div>
         <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"

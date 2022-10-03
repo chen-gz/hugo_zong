@@ -2,16 +2,19 @@
   The common styles
 */
 
-
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 img[data-src] {
   margin: 0.5rem 0;
 
-  &[data-loaded=true] {
+  &[data-loaded="true"] {
     animation: fade-in linear 0.5s;
   }
 
@@ -33,7 +36,6 @@ img[data-src] {
   @extend %img-caption;
 }
 
-
 .footnotes > ol {
   padding-left: 2rem;
   margin-top: 0.5rem;
@@ -51,7 +53,7 @@ img[data-src] {
 
     /* [scroll-focus] added by `smooth-scroll.js` */
     &:target:not([scroll-focus]),
-    &[scroll-focus=true] > p {
+    &[scroll-focus="true"] > p {
       background-color: var(--footnote-target-bg);
       width: fit-content;
       -webkit-transition: background-color 1.5s ease-in-out; /* Safari prior 6.1 */
@@ -72,7 +74,7 @@ img[data-src] {
 
   /* [scroll-focus] added by `smooth-scroll.js` */
   @at-root sup:target:not([scroll-focus]),
-  sup[scroll-focus=true] > a#{&} {
+    sup[scroll-focus="true"] > a#{&} {
     background-color: var(--footnote-target-bg);
   }
 }
@@ -87,8 +89,6 @@ img[data-src] {
     border-bottom-style: none !important;
   }
 }
-
-
 
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
@@ -110,16 +110,15 @@ img[data-src] {
   width: 100%;
   z-index: 1;
 
-  @at-root [#{$sidebar-display}] & {
-    display: block !important;
-  }
+  // @at-root [#{$sidebar-display}] & {
+  //   display: block !important;
+  // }
 }
 
 #back-to-top:hover {
   transform: translate3d(0, -5px, 0);
   -webkit-transform: translate3d(0, -5px, 0);
 }
-
 
 /*
   Responsive Design:
@@ -128,9 +127,3 @@ img[data-src] {
  {content} <= 849px screen width
 
 */
-
-
-
-
-
-

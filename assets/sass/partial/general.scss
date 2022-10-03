@@ -1,4 +1,10 @@
+html {
+  // @include dark-scheme;
+  @include light-scheme;
+}
 body {
-  width: 100vw;
-  max-width: 100vw;
+  background: var(--body-bg);
+  color: var(--text-color);
+  // font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
+  font-family: "Times New Roman", "Microsoft Yahei", sans-serif;
 }

@@ -1,9 +1,12 @@
 #sidebar {
+  background-color: var(--sidebar-bg);
   position: sticky;
   height: 100vh;
+  // display: none !important;
 
-  // width: $sidebar-width;
+  // max-width: $sidebar-width;
   // min-width: $sidebar-width;
+  width: $sidebar-width !important;
   top: 0; // for position: sticky
 
   #avatar {
@@ -200,10 +203,3 @@
     width: 100%;
   }
 }
-
-// hide sidebar when screen width less than 850px
-// @media all and (max-width: 1200) {
-//   #sidebar {
-//     display: none !important;
-//   }
-// }

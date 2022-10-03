@@ -1,8 +1,13 @@
 #topbar-wrapper {
-  position: relative;
+  z-index: 100;
+  transition: top 0.2s ease-in-out;
+  background-color: var(--topbar-wrapper-bg);
+
+  position: sticky;
   top: 0;
   height: $topbar-height;
-  width: calc(100vw - #{$sidebar-width});
+  // width: calc(100% - #{$sidebar-width});
+  width: 100%;
   // left: 0;
   // right: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);

@@ -1,20 +1,47 @@
-<!-- <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4 pb-5"> -->
-<!--     <div class="post pl-1 pr-1 pl-md-2 pr-md-2"> -->
-<!--         <h1 class="dynamic-title">Archives</h1> -->
-<!--         <div class="post-content"> -->
-<!--             <div id="tags" class="d-flex flex-wrap ml-xl-2 mr-xl-2"> -->
-<!--                 {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }} -->
-<!--                 {{ with $.Site.GetPage (printf "/tags/%s" $name) }} -->
-<!--                 <div> -->
-<!--                     <a class="tag" href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}} -->
-<!--                         <span class="text-muted">{{$cnt}}</span> -->
-<!--                     </a> -->
-<!--                 </div> -->
-<!--                 {{end}} -->
-<!--                 {{end}} -->
-<!--             </div> -->
-<!--         </div> -->
-<!--     </div> -->
-<!-- </div> -->
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
 
-{{ define "main" }} {{ end }}
+<body data-spy="scroll" data-target="#toc" data-topbar-visible="true" class="d-flex">
+    {{- partial "sidebar.html" . -}}
+    <div id="all-wrapper" class="d-flex flex-column">
+        {{- partial "topbar.html" . -}}
+        <div id="main-wrapper" class="d-flex mt-3">
+            <div id="core-wrapper" class="d-flex flex-column mr-5 ml-5">
+                <div id="main" class="d-flex flex-column">
+                    <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
+                        <h1 class="dynamic-title">Archives</h1>
+                        <div class="post-content">
+                            <div id="tags" class="d-flex flex-wrap ml-xl-2 mr-xl-2">
+                                {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt :=
+                                .Count }} {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                                <div>
+                                    <a class="tag" href="{{ .RelPermalink }}"
+                                        title="All pages with tag <i>{{$name}}</i>">{{$name}}
+                                        <span class="text-muted">{{$cnt}}</span>
+                                    </a>
+                                </div>
+                                {{end}} {{end}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <footer class="footer">{{- partial "footer.html" . -}}</footer>
+                </div>
+            </div>
+            <div id="panel-wrapper" class="d-flex flex-column">
+                {{- partial "panel.html" . -}}
+            </div>
+        </div>
+        <div id="mask"></div>
+        <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"
+            style="display: none">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    </div>
+    <!-- notification and some scripts -->
+</body>
+
+</html>

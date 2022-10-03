@@ -1,6 +1,74 @@
-// hide panel when screen width less than 850px
-// @media all and (max-width: 850px) {
-//   #panel-wrapper {
-//     display: none !important;
-//   }
-// }
+#panel-wrapper {
+  position: sticky !important;
+  top: 50px;
+  width: $sidebar-width;
+  height: 90vh;
+
+  //   /* the headings */
+  //   .panel-heading {
+  //     @include label(inherit);
+  //   }
+  //
+  //   .post-tag {
+  //     display: inline-block;
+  //     line-height: 1rem;
+  //     font-size: 0.85rem;
+  //     background: none;
+  //     border: 1px solid var(--btn-border-color);
+  //     border-radius: 0.8rem;
+  //     padding: 0.3rem 0.5rem;
+  //     margin: 0 0.35rem 0.5rem 0;
+  //
+  //     &:hover {
+  //       background-color: #2a408e;
+  //       border-color: #2a408e;
+  //       color: #fff;
+  //       transition: none;
+  //     }
+  //   }
+  //
+  //   [data-topbar-visible="true"] & > div {
+  //   }
+  //     top: 6rem;
+}
+
+#access-lastmod {
+  li {
+    height: 1.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    list-style: none;
+  }
+
+  a {
+    &:hover {
+      @extend %link-hover;
+    }
+
+    @extend %no-bottom-border;
+
+    color: inherit;
+  }
+}
+#access-tags {
+  .post-tag {
+    display: inline-block;
+    line-height: 1rem;
+    font-size: 0.85rem;
+    background: none;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    margin: 0 0.35rem 0.5rem 0;
+
+    &:hover {
+      background-color: #2a408e;
+      border-color: #2a408e;
+      color: #fff;
+      transition: none;
+    }
+  }
+}

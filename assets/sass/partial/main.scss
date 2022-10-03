@@ -1,4 +1,15 @@
-#main-wrapper {
-    width: calc(100vw - #{$sidebar-width});
+#core-wrapper {
+  position: relative;
+  // width: calc(100% - #{$sidebar-width});
+  width: calc(100% - #{$sidebar-width});
 }
 
+#main {
+  height: 100%;
+}
+
+#main-wrapper {
+}
+#all-wrapper {
+  width: calc(98vw - #{$sidebar-width});
+}
