@@ -19,6 +19,26 @@
     // display: none;
     color: #999;
   }
+}
+
+#topbar-title {
+  display: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: var(--topbar-text-color);
+  text-align: center;
+  // width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+#sidebar-trigger {
+  display: none;
+}
+
   #breadcrumb {
     // display: none;
     font-size: 1rem;
@@ -41,22 +61,3 @@
       }
     }
   }
-}
-
-#topbar-title {
-  display: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: sans-serif;
-  color: var(--topbar-text-color);
-  text-align: center;
-  // width: 70%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: keep-all;
-  white-space: nowrap;
-}
-
-#sidebar-trigger {
-  display: none;
-}
