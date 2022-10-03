@@ -11,3 +11,10 @@ body {
 a {
   @extend %link-color;
 }
+
+#footer-wrapper {
+    margin-top: 3px;
+    padding-top: 10px;
+    border-top: 1px solid var(--main-border-color);
+
+}
