@@ -1,12 +1,15 @@
 <div id="topbar-wrapper">
     <div id="topbar" class="d-flex">
         <!-- class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> -->
-        <span id="breadcrumb">
-            {{$paths := split .RelPermalink "/"}} {{$tmp := ""}} {{range $i, $p :=
-            $paths}} {{if eq $i 0}}
-            <span><a href='{{ "/" | absURL }}'>Home </a></span>
-            {{else}} {{$tmp = printf "%s/%s" $tmp $p}} {{if $p}}
-            <span><a href="{{ $tmp | absURL }}">{{ $p }} </a></span>
+        <span id="breadcrumb" class="d-flex">
+            {{$paths := split .RelPermalink "/"}} {{ $length := len $paths }} 
+            {{ $length := sub $length 2}} {{$tmp := ""}} {{range $i, $p := $paths}} 
+            {{if eq $i 0}}
+            <!-- <span><a href='{{ "/" | absURL }}'>Home </a></span> -->
+            <div><a href='{{ "/" | absURL }}'>Home</a></div>
+            {{else}} {{$tmp = printf "%s/%s" $tmp $p}} {{if lt $i $length}}
+            <!-- <span><a href="{{ $tmp | absURL }}">{{ $p }} </a></span> -->
+            <div><a href="{{ $tmp | absURL }}">{{ $p }}</a></div>
             {{end}} {{end}} {{end}}
         </span>
         <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>

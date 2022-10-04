@@ -60,14 +60,14 @@
     // @extend %link-hover;
   }
 
-  span {
+  div {
     // padding-right: 0.5rem;
     &:not(:last-child) {
       &::after {
         content: "›";
-        // padding-left: 0.3rem;
-        // padding-right: 0.3rem;
-        margin: 0.1rem 0.1rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        // margin: 0.1rem 0.1rem;
         font-size: 1rem;
       }
     }
