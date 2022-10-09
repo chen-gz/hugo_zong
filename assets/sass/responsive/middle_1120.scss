@@ -2,10 +2,11 @@
 @media all and (max-width: 1120px) {
   #panel-wrapper {
     display: none !important;
+    max-width: 0px;
   }
 
   #core-wrapper {
-    // width: 100%;
+    width: 97%;
   }
 }
 
