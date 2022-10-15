@@ -22,63 +22,63 @@ document.addEventListener("keydown", function (event) {
     // Load json search index if first time invoking search
     // Means we don't load json unless searches are going to happen; keep user payload small unless needed
     doSearch(event);
+      showSearch();
   }
 
   // Allow ESC (27) to close search box
   if (event.keyCode == 27) {
-    if (searchVisible) {
-      // document.getElementById("fastSearch").style.visibility = "hidden";
-      document.activeElement.blur();
-      searchVisible = false;
-    }
+    // if (searchVisible) {
+    //   // document.getElementById("fastSearch").style.visibility = "hidden";
+    document.activeElement.blur();
+    hideSearch();
   }
 
   // DOWN (40) arrow
-  if (event.keyCode == 40) {
-    if (searchVisible && resultsAvailable) {
-      console.log("down");
-      event.preventDefault(); // stop window from scrolling
-      if (document.activeElement == maininput) {
-        // first.focus();
-      } // if the currently focused element is the main input --> focus the first <li>
-      else if (document.activeElement == last) {
-        last.focus();
-      } // if we're at the bottom, stay there
-      else {
-        document.activeElement.parentElement.nextSibling.firstElementChild.focus();
-      } // otherwise select the next search result
-    }
-  }
+  // if (event.keyCode == 40) {
+  //   if (searchVisible && resultsAvailable) {
+  //     console.log("down");
+  //     event.preventDefault(); // stop window from scrolling
+  //     if (document.activeElement == maininput) {
+  //       // first.focus();
+  //     } // if the currently focused element is the main input --> focus the first <li>
+  //     else if (document.activeElement == last) {
+  //       last.focus();
+  //     } // if we're at the bottom, stay there
+  //     else {
+  //       document.activeElement.parentElement.nextSibling.firstElementChild.focus();
+  //     } // otherwise select the next search result
+  //   }
+  // }
 
   // UP (38) arrow
-  if (event.keyCode == 38) {
-    if (searchVisible && resultsAvailable) {
-      event.preventDefault(); // stop window from scrolling
-      if (document.activeElement == maininput) {
-        maininput.focus();
-      } // If we're in the input box, do nothing
-      else if (document.activeElement == first) {
-        maininput.focus();
-      } // If we're at the first item, go to input box
-      else {
-        document.activeElement.parentElement.previousSibling.firstElementChild.focus();
-      } // Otherwise, select the search result above the current active one
-    }
-  }
+  // if (event.keyCode == 38) {
+  //   if (searchVisible && resultsAvailable) {
+  //     event.preventDefault(); // stop window from scrolling
+  //     if (document.activeElement == maininput) {
+  //       maininput.focus();
+  //     } // If we're in the input box, do nothing
+  //     else if (document.activeElement == first) {
+  //       maininput.focus();
+  //     } // If we're at the first item, go to input box
+  //     else {
+  //       document.activeElement.parentElement.previousSibling.firstElementChild.focus();
+  //     } // Otherwise, select the search result above the current active one
+  //   }
+  // }
 });
 
 // ==========================================
 // execute search as each character is typed
 //
 document.getElementById(search_input_id).onkeyup = function (e) {
-  // searchVisible = true;
-  // doSearch(e);
+  searchVisible = true;
+  doSearch(e);
   executeSearch(this.value);
 };
 document.getElementById(search_input_id).onclick = function (e) {
-  // searchVisible = true;
+  searchVisible = true;
   doSearch(e);
-  // executeSearch(this.value);
+  executeSearch(this.value);
 };
 
 document.querySelector("body").onclick = function (e) {
@@ -92,13 +92,14 @@ document.querySelector("body").onclick = function (e) {
 // }
 
 function doSearch(e) {
+    console.log("doSearch()");
   e.stopPropagation();
   if (firstRun) {
     loadSearch(); // loads our json data and builds fuse.js search index
     firstRun = false; // let's never do this again
   }
   // Toggle visibility of search box
-  if (!searchVisible) {
+  if (searchVisible) {
     showSearch(); // search visible
   } else {
     hideSearch();
@@ -106,13 +107,20 @@ function doSearch(e) {
 }
 
 function hideSearch() {
-  // document.getElementById("fastSearch").style.visibility = "hidden" // hide search box
-  document.activeElement.blur(); // remove focus from search box
+  document.getElementById("search-result-wrapper").style.display = "none";
+  document.getElementById("panel-wrapper").style.display = "flex";
+  document.getElementById("core-wrapper").style.display = "flex";
+  // document.activeElement.blur(); // remove focus from search box
   searchVisible = false;
 }
 
 function showSearch() {
-  // document.getElementById("fastSearch").style.visibility = "visible" // show search box
+    console.log("showSearch()");
+  document.getElementById("search-result-wrapper").style.display = "flex";
+  document.getElementById("panel-wrapper").style.display = "none";
+  document.getElementById("core-wrapper").style.display = "none";
+  // document.getElementById("core-wrapper").style.maxWidth = "0px";
+  // document.getElementById("core-wrapper").style.visibility = "hidden";
   document.getElementById(search_input_id).focus(); // put focus in input box so you can just start typing
   searchVisible = true;
 }
@@ -153,6 +161,7 @@ function loadSearch() {
     // Create the Fuse index
     fuseIndex = Fuse.createIndex(options.keys, data);
     fuse = new Fuse(data, options, fuseIndex); // build the index from the json file
+    console.log("Fuse index loaded");
   });
 }
 
@@ -162,6 +171,7 @@ function loadSearch() {
 // in the search box
 //
 function executeSearch(term) {
+  console.log(typeof fuse);
   let results = fuse.search(term); // the actual query being run using fuse.js
   let searchitems = ""; // our results bucket
 

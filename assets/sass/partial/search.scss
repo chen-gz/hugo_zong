@@ -12,11 +12,11 @@
   }
 }
 #search-result-wrapper {
-  display: none !important;
-  position: fixed;
+  // display: none !important;
+  // position: fixed;
   background-color: white;
   top: $topbar-height;
-  z-index: 100;
+  // z-index: 100;
   overflow: auto;
   .post-content {
     margin-top: 2rem;

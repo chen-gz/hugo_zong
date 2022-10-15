@@ -14,6 +14,7 @@
 }
 
 #main-wrapper {
+    height: calc(97% - #{$topbar-height});
 }
 #all-wrapper {
   width: calc(100vw - #{$sidebar-width} - 1px);
