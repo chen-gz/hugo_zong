@@ -1,7 +1,7 @@
 // hide sidebar when screen width less than 850px
 @media all and (max-width: 850px) {
   #sidebar {
-    display: none !important;
+    display: none;
   }
   #all-wrapper {
     width: 99vw;
