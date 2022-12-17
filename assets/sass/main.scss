@@ -28,11 +28,12 @@
 @import "partial/markdown";
 @import "responsive/small_850";
 @import "responsive/middle_1120";
-// @import 'responsive/large';
+@import 'responsive/large';
 
 // TODO: need to fix
 // @import "layout/post";
-// @import "layout/home";
+//@import "layout/home";
+@import "layout/post";
 @import "layout/tags";
 @import "layout/archives";
 @import "layout/categories";
