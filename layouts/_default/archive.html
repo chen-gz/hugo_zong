@@ -6,16 +6,16 @@
         <div id="archives" class="pl-xl-3">
             {{$previous_year := ""}}
             {{range $i, $p := .Site.RegularPages}}
-            {{$this_year := (.PublishDate.Format "2006")}}
-            {{$this_month := (.PublishDate.Format "Jan")}}
-            {{$this_day := (.PublishDate.Format "02")}}
-            {{if not (eq $this_year $previous_year)}}
-            {{if not (eq $i 0)}}
-            </ul>
-            {{end}}
-            <!-- <span class="lead"> {{$this_year}}</span> -->
-            <div class="year lead">{{$this_year}}</div>
-            <ul class="list-unstyled">
+                {{$this_year := (.PublishDate.Format "2006")}}
+                {{$this_month := (.PublishDate.Format "Jan")}}
+                {{$this_day := (.PublishDate.Format "02")}}
+                {{if not (eq $this_year $previous_year)}}
+                    {{if not (eq $i 0)}}
+                        </ul>
+                    {{end}}
+                    <!-- <span class="lead"> {{$this_year}}</span> -->
+                    <div class="year lead">{{$this_year}}</div>
+                    <ul class="list-unstyled">
                 {{end}}
                 <li>
                     <span class="=date day">{{$this_day}}</span>
@@ -23,7 +23,7 @@
                     <a href="{{ .Permalink }}">{{.Title}} </a>
                 </li>
                 {{$previous_year = $this_year}}
-                {{end}}
+            {{end}}
             </ul>
         </div>
     </div>
