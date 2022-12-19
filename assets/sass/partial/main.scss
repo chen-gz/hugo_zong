@@ -31,9 +31,3 @@
   width: calc(100vw - #{$sidebar-width} - 1px);
 }
 
-.post-preview {
-  // border-bottom-color: var(--main-border-color);
-  border-bottom: solid 1px var(--main-border-color);
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-}
