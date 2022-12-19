@@ -13,8 +13,7 @@
                         <h1 class="dynamic-title">Archives</h1>
                         <div class="post-content">
                             <div id="tags" class="d-flex flex-wrap ml-xl-2 mr-xl-2">
-                                {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt :=
-                                .Count }} {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                                {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }} {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
                                 <div>
                                     <a class="tag" href="{{ .RelPermalink }}"
                                         title="All pages with tag <i>{{$name}}</i>">{{$name}}

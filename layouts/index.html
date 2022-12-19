@@ -3,9 +3,7 @@
 <!-- <div class="post pl-1 pr-1 pl-md-2 pr-md-2"> -->
 <!-- <div id="post-list"> -->
 {{range $i, $p := .Site.RegularPages}}
-{{if gt $i 10}}
-{{break}}
-{{end}}
+{{if lt $i 10}}
 <div class="post-preview">
     <h1>
         <a href="{{.Permalink}}">{{.Title}} </a>
@@ -23,7 +21,7 @@
 
     </div>
 </div>
+
 {{end}}
-<!-- </div> -->
-<!-- </div> -->
+{{end}}
 {{end}}

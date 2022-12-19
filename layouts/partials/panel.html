@@ -10,8 +10,7 @@
 <div id="access-lastmod" class="post pb-4 pl-2">
     <div class="panel-heading">Recently Updated</div>
     <ul class="post-content pl-3 pb-1 ml-1 mt-2">
-        {{ $byLastMod := .Site.RegularPages.ByLastmod }} {{ $recent := ($byLastMod |
-        last 5).Reverse }} {{ range $recent }}
+        {{ $byLastMod := .Site.RegularPages.ByLastmod }} {{ $recent := ($byLastMod | last 5).Reverse }} {{ range $recent }}
         <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
     </ul>

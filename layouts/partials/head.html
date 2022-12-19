@@ -9,12 +9,10 @@
     {{if or (eq .Layout "home") (eq .Layout "post")}} {{end}}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {{ $sass := resources.Get "sass/main.scss" }} {{ $style := $sass |
-    resources.ToCSS | resources.Fingerprint }}
+    {{ $sass := resources.Get "sass/main.scss" }} {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
     <title>
-        {{ $title := print .Site.Title " | " .Title }} {{ if .IsHome }}{{ $title =
-        .Site.Title }}{{ end }} {{ $title }}
+        {{ $title := print .Site.Title " | " .Title }} {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }} {{ $title }}
     </title>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
