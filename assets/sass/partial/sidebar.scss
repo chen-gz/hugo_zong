@@ -52,7 +52,7 @@
       // @extend %clickable-transition;
 
       font-weight: 900;
-      font-size: 1.5rem;
+      font-size: 20pt;
       letter-spacing: 0.5px;
       color: rgba(134, 133, 133, 99%);
     }
@@ -81,16 +81,6 @@
     text-align: center;
     display: table;
     height: $tab-height;
-
-    // &.active {
-    //   .nav-link {
-    //     color: var(--sidebar-active-color);
-    //   }
-    // }
-
-    // &:not(.active) > a {
-    //   @extend %clickable-transition;
-    // }
   }
 
   ul {
@@ -103,6 +93,9 @@
 
     li {
       width: 100%;
+      span {
+          font-size: 13pt;
+      }
 
       &:last-child {
         a {
@@ -110,7 +103,6 @@
           left: $cursor-width / 2;
           width: 100%;
         }
-
         &::after {
           /* the cursor */
           display: table;

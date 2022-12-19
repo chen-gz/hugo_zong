@@ -4,15 +4,21 @@
 
 // for main
 
-#main{
-
-//   font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
-//    font-family: "Times New Roman", "Microsoft Yahei", sans-serif;
+.post{
     h1 {
-        font-size: 1.8rem;
-        font-family: "Source Sans Pro";
+        font-size: 28pt;
+        font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
+    }
+    h2 {
+        font-size: 24pt;
+        font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
+    }
+    h3 {
+        font-size: 20pt;
+        font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
     }
     p {
-        font-size: 1.3rem;
+        font-size: 17pt;
+        font-family: "Times New Roman", "Microsoft Yahei", sans-serif;
     }
 }

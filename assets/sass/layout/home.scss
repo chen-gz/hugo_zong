@@ -2,6 +2,23 @@
   Style for Homepage
 */
 
+.post-preview {
+    h1 {
+        font-size: 1.8rem;
+        font-family: "Source Sans Pro", "Microsoft Yahei", sans-serif;
+    }
+    p {
+        font-size: 1.3rem;
+        font-family: "Times New Roman", "Microsoft Yahei", sans-serif;
+
+    }
+    a {
+        color: #292929;
+    }
+}
+.post-content {
+    overflow-wrap: break-word;
+}
 // .pagination {
 //   color: var(--btn-patinator-text-color);
 //   font-family: 'Lato', sans-serif;

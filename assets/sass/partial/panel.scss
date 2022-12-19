@@ -3,34 +3,23 @@
   top: 50px;
   width: $sidebar-width;
   height: 90vh;
-
-  //   /* the headings */
-  //   .panel-heading {
-  //     @include label(inherit);
-  //   }
-  //
-  //   .post-tag {
-  //     display: inline-block;
-  //     line-height: 1rem;
-  //     font-size: 0.85rem;
-  //     background: none;
-  //     border: 1px solid var(--btn-border-color);
-  //     border-radius: 0.8rem;
-  //     padding: 0.3rem 0.5rem;
-  //     margin: 0 0.35rem 0.5rem 0;
-  //
-  //     &:hover {
-  //       background-color: #2a408e;
-  //       border-color: #2a408e;
-  //       color: #fff;
-  //       transition: none;
-  //     }
-  //   }
-  //
-  //   [data-topbar-visible="true"] & > div {
-  //   }
-  //     top: 6rem;
+  .panel-heading{
+      font-size: 13pt;
+  }
+  a {
+      font-size: 10pt;
+  }
 }
+
+#toc-wrapper {
+  a {
+      font-size: 10pt;
+  }
+  span {
+      font-size: 13pt;
+  }
+}
+
 
 #access-lastmod {
   li {
